@@ -59,7 +59,7 @@ const populations = [60.36, 47.43, 83.02, 5.37];
 const percentages = new Array(percentageOfWorld1(populations[0]), percentageOfWorld1(populations[1]), percentageOfWorld1(populations[2]), percentageOfWorld1(populations[populations.length - 1]));
 // console.log(percentages);
 
-/* 
+/*
 LECTURE: Basic Array Operations (Methods)
 1. Create an array containing all the neighbouring countries of a country of your
 choice. Choose a country which has at least 2 or 3 neighbours. Store the array
@@ -74,7 +74,7 @@ console: 'Probably not a central European country :D'
 index of the country in the 'neighbours' array, and then use that index to
 change the array at that index position. For example, you can search for
 'Sweden' in the array, and then replace it with 'Republic of Sweden'.
-*/
+
 
 const neighbours = ['France', 'Switzerland', 'Austria', 'Slovenia'];
 console.log(neighbours);
@@ -91,4 +91,19 @@ if (indexOfSwitzerland >= 0 && indexOfSwitzerland < neighbours.length) {
     neighbours[indexOfSwitzerland] = 'Swiss Confederation';
 }
 console.log(neighbours);
+*/
 
+/*
+LECTURE: Introduction to Objects
+1. Create an object called 'myCountry' for a country of your choice, containing
+properties 'country', 'capital', 'language', 'population' and
+'neighbours' (an array like we used in previous assignments)
+*/
+const myCountry = {
+    country: 'Italy',
+    capital: 'Rome',
+    language: 'Italian',
+    population: 60234639,
+    neighbours: ['France', 'Switzerland', 'Austria', 'Slovenia']
+};
+console.log(myCountry.country, myCountry.capital, myCountry.language, myCountry.population, myCountry.neighbours);
