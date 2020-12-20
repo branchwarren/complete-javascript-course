@@ -118,7 +118,7 @@ const myCountry = {
 // console.log(myCountry.country, myCountry.capital, myCountry.language, myCountry.population, myCountry.neighbours);
 
 
-/* 
+/*
 LECTURE: Dot vs. Bracket Notation
 1. Using the object from the previous assignment, log a string like this to the
 console: 'Finland has 6 million finnish-speaking people, 3 neighbouring countries
@@ -143,6 +143,23 @@ there are. Use the ternary operator to set the property.
 // myCountry.describe();
 // console.log(myCountry.checkIsland());
 
-for (let i = 1; i <= 50; i++) {
-    console.log(`Voter number ${i} is currently voting`);
+// for (let i = 1; i <= 50; i++) {
+//     console.log(`Voter number ${i} is currently voting`);
+// }
+
+/*
+LECTURE: Looping Arrays, Breaking and Continuing
+1. Let's bring back the 'populations' array from a previous assignment
+2. Use a for loop to compute an array called 'percentages2' containing the
+percentages of the world population for the 4 population values. Use the
+function 'percentageOfWorld1' that you created earlier
+3. Confirm that 'percentages2' contains exactly the same values as the
+'percentages' array that we created manually in the previous assignment,
+and reflect on how much better this solution is
+*/
+const percentages2 = [];
+for (let i = 0; i < populations.length; i++) {
+    percentages2.push(percentageOfWorld1(populations[i]));
 }
+console.log(percentages2.length === percentages.length ? true : false);
+console.log(percentages2);
