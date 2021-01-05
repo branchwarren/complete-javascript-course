@@ -56,27 +56,135 @@ const restaurant = {
   openingHours,
 };
 
-// Object Property NAMES
-const properties = Object.keys(openingHours);
-console.log(properties);
+// Maps - part 2
+const question = new Map([
+  ['question', 'What is the best programming language in the world?'],
+  [1, 'C'],
+  [2, 'Java'],
+  [3, 'JavaScript'],
+  ['correct', 3],
+  [true, 'Correct 🍕'],
+  [false, 'Try again!'],
+]);
+console.log(question);
 
-let openStr = `We are open on ${properties.length} days: `;
-for (const day of properties) {
-  openStr += `${day}, `;
+// convert object to map
+console.log(Object.entries(openingHours)); // has the same structure, array of arrays
+const hoursMap = new Map(Object.entries(openingHours));
+console.log(hoursMap);
+
+// Quiz app - loop on maps
+console.log(question.get('question'));
+for (const [key, value] of question) {
+  if (typeof key === 'number') console.log(`Answer ${key}: ${value}`);
 }
-console.log(openStr);
+// const answer = Number(prompt('Your answer'));
+const answer = 3;
+console.log(answer);
+console.log(question.get(answer === question.get('correct')));
+
+// convert map to array
+console.log(...question);
+// console.log(question.entries());
+console.log(...question.keys());
+console.log(...question.values());
+
+//Maps
+// const rest = new Map(); // empty map creation
+// rest.set('name', 'Classico Italiano');
+// rest.set(1, 'Firenze, Italy'); // keys can be of different types
+// console.log(rest.set(2, 'Lisbon, Portugal')); // the 'set' method returns the map itself
+
+// the 'set' return type allows to do method chaining
+// rest
+//   .set('categories', ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'])
+//   .set('open', 11)
+//   .set('close', 23)
+//   .set(true, 'We are open :D')
+//   .set(false, 'We are closed :(');
+// console.log(rest);
+
+// console.log(rest.get('name'));
+// console.log(rest.get(true));
+// console.log(rest.get(1));
+
+// const time = 21;
+// const time = 8;
+// console.log(rest.get(time > rest.get('open') && time < rest.get('close')));
+
+// check if element exists
+// console.log(rest.has('categories'));
+// rest.delete(2); // delete an item
+// console.log(rest);
+// console.log(rest.size); // get the size of the map
+// // rest.clear(); // delete all the items
+// console.log(rest.size);
+
+// const arr = [1, 2];
+// rest.set(arr, 'Test'); // use an array as key
+// console.log(rest.get(arr));
+// rest.set(document.querySelector('h1'), 'Heading'); // use an object as key
+// console.log(rest);
+
+// Sets
+// const ordersSet = new Set([
+//   'Pasta',
+//   'Pizza',
+//   'Pizza',
+//   'Risotto',
+//   'Pasta',
+//   'Pizza',
+// ]);
+// console.log(ordersSet);
+
+// console.log(new Set('Jonas'));
+// console.log(ordersSet.size);
+// console.log(ordersSet.has('Pizza'));
+// console.log(ordersSet.has('Bread'));
+// ordersSet.add('Garlic Bread');
+// ordersSet.add('Garlic Bread');
+// ordersSet.delete('Risotto');
+// console.log(ordersSet);
+// console.log(ordersSet[0]); // it doesn't work, it returns 'undefined'
+// console.log(ordersSet[1]); // it doesn't work, it returns 'undefined'
+// ordersSet.clear(); // to delete the whole content
+// console.log(ordersSet);
+
+// the Set is iterable
+// for (const order of ordersSet) console.log(order);
+
+// Example: get a list of distinct items
+// const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
+// const staffUnique = [...new Set(staff)]; // with spread operator I get an Array of distinct items
+// console.log(staffUnique);
+
+// console.log(
+//   new Set(['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter']).size
+// ); // to know the number of distinct items
+
+// console.log(new Set('jonasschmedtmann').size); // to get the number of different letters into a string
+
+// Object Property NAMES
+// const properties = Object.keys(openingHours);
+// console.log(properties);
+
+// let openStr = `We are open on ${properties.length} days: `;
+// for (const day of properties) {
+//   openStr += `${day}, `;
+// }
+// console.log(openStr);
 
 // Object Property VALUES
-const values = Object.values(openingHours);
-console.log(values);
+// const values = Object.values(openingHours);
+// console.log(values);
 
 // Entire object
-const entries = Object.entries(openingHours);
+// const entries = Object.entries(openingHours);
 // console.log(entries);
 
-for (const [key, { open, close }] of entries) {
-  console.log(`On ${key} we open at ${open} and close at ${close}`);
-}
+// for (const [key, { open, close }] of entries) {
+//   console.log(`On ${key} we open at ${open} and close at ${close}`);
+// }
 
 // console.log(restaurant.openingHours.mon.open); this throws a 'script.js:60 Uncaught TypeError: Cannot read property 'open' of undefined'
 // we should write...
